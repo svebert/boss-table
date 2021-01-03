@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="boss_table.css">
+<script src="https://kit.fontawesome.com/2f6feeec4b.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="boss_table.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+dom_elm = document.createElement('a');
+dom_elm.appendChild(document.createTextNode("my-link"));
+dom_elm.setAttribute("href","http://www.google.com");
+dataSet = [
+    {col1: {data:"A", display: "a"}, col2: "B", col3: 1},
+    {col1: {data:"C", display: "c"}, col2: "D", col3: 0},
+    {col1: {data:"E", display: dom_elm}, col2: "F", col3: 2},
+    {col1: {data:"G", display: "g"}, col2: "H", col3: 4},
+    {col1: {data:"I", display: "i"}, col2: "J", col3: 5},
+    {col1: {data:"K", display: "k"}, col2: "L", col3: 4},
+    {col1: {data:"M", display: "m"}, col2: "N", col3: 7},
+    {col1: {data:"O", display: "o"}, col2: "P", col3: 4},
+    {col1: {data:"Q", display: "q"}, col2: "R", col3: 1},
+    {col1: {data:"S", display: "s"}, col2: "T", col3: 2},
+    {col1: {data:"U", display: "u"}, col2: "B", col3: 3},
+]
+
+tableDescr = {
+ data: dataSet,
+ name: "example",
+ pagination: 1,
+ columns: [
+            { title: "awsome column 1", data: "col1", display_column: 0},
+            { title: "awsome column 2", data: "col2", display_column: 1},
+            { title: "awsome column 3", data: "col3", display_column: 1, format_options: {style: "currency", currency: "EUR"}}
+          ],
+
+   page_length: 10,
+}
+
+$(document).ready(function () {CreateBossTable(tableDescr);});
+
+</script>
+<table id="example" class="boss-table"></table>
+<div id="example_pagination" class="boss-table pagination"></div>
+</body>
+</html>
