@@ -351,7 +351,7 @@ function OnClickBackward() {
 }
 
 function OnClickLast() {
-  window.tableDescr.state.current_page = Math.max(0, window.tableDescr.data.length/window.tableDescr.page_length -1);
+  window.tableDescr.state.current_page = Math.max(0, Math.floor(window.tableDescr.data.length/window.tableDescr.page_length));
   ChangePage(window.tableDescr);
 }
 
@@ -392,9 +392,7 @@ ChangePage(window.tableDescr);
 }
 
 function OnClickVDots(event){
-    console.log(event.target.id)
     id_split_arr = event.target.id.split("-")
-        console.log(id_split_arr)
     target = document.querySelector("#bsst-options-overlay-"+id_split_arr[id_split_arr.length -1]);
     if(target.style.display == "block"){
         target.style.display = "none";
