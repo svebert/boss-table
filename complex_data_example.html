@@ -11,10 +11,13 @@
 <body>
 
 <script type="text/javascript">
+dom_elm = document.createElement('a');
+dom_elm.appendChild(document.createTextNode("my-link"));
+dom_elm.setAttribute("href","http://www.google.com");
 dataSet = [
     {col1: {data:"A", display: "a"}, col2: "B", col3: 1},
     {col1: {data:"C", display: "c"}, col2: "D", col3: 0},
-    {col1: {data:"E", display: "e"}, col2: "F", col3: 2},
+    {col1: {data:"E", display: dom_elm}, col2: "F", col3: 2},
     {col1: {data:"G", display: "g"}, col2: "H", col3: 4},
     {col1: {data:"I", display: "i"}, col2: "J", col3: 5},
     {col1: {data:"K", display: "k"}, col2: "L", col3: 4},
