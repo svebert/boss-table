@@ -7,7 +7,7 @@ powerful javascript table with the following features:
 *for every data point a display/render value or html element can be assigned
 *all format options of javascript toLocaleString supported
 
-![example table](example_table.png)
+![example table](image.png)
 
 # Provided examples
 * [basic example](simple_example.html)
