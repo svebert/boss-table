@@ -8,7 +8,9 @@ function getNumberOfColumns(column_array){
     if( !("display_column" in tableDescr.columns[idx])){
         nDisp = idx;
     }
-    nDisp = tableDescr.columns[idx]["display_column"];
+    else{
+        nDisp = tableDescr.columns[idx]["display_column"];
+    }
     if(nDisp< idx_min){
         idx_min = nDisp;
     }
@@ -108,7 +110,7 @@ function addTable(tableDescr)
            idx++;
            continue;
        }
-       var nDispCol = key;
+       var nDispCol = idx;
        if("display_column" in tableDescr.columns[idx]){
         nDispCol=tableDescr.columns[idx].display_column;
        }
