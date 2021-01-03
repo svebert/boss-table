@@ -1,11 +1,11 @@
 # boss-table
 powerful javascript table with the following features:
-*Pagination
-*asc/desc natural sort (correct sort for strings, numbers and dates)
-*display multiple data columns in single table column
-*Hide/Show selected table columns
-*for every data point a display/render value or html element can be assigned
-*all format options of javascript toLocaleString supported
+* Pagination
+* asc/desc natural sort (correct sort for strings, numbers and dates)
+* display multiple data columns in single table column
+* Hide/Show selected table columns
+* for every data point a display/render value or html element can be assigned
+* all format options of javascript toLocaleString supported
 
 ![example table](image.png)
 
