@@ -14,6 +14,7 @@ powerful javascript table with the following features:
 * [example for displaying two data columns in one table column with line break](display_column_example.html)
 * [example for providing different display values for data points](complex_data_example.html)
 * [example for format options](format_options_example.html)
+* [example for custom option and sorting icons/elements](display_column_example.html)
 
 # Getting started
 you need to import the js-script and css-stylesheet in your html header
@@ -66,9 +67,9 @@ The value for *pagination* can be 1 (on) or 0 (off). If *pagination* is off, you
 The *columns* key holds an array with one dictionary element per data column. With the key *title*, you set the title of the column defined with the key *data*. The value of the *data* key must be one valid key in the *dataSet* array.
 
 Pass the dictionary *tableDescr* to the function *CreateBossTable*. This function will create a table at the placeholder position. If you call *CreateBossTable* like shown above, the *<script>* must be called after the *<table.../>* placeholder. 
-In the examples a different way with the usage of jquery is shown. In that case you need to include jquery in your html header. You should also include
+In the examples a different way with the usage of *jquery* is shown. In that case you need to include *jquery* in your html header. You should also include
 ```html
 <script src="https://kit.fontawesome.com/2f6feeec4b.js" crossorigin="anonymous"></script>
 ```
-to have the sort and options icons correctly shown.
+to have the sort and options icons correctly shown. If you want to use different icons pls look into the [example for custom option and sorting icons/elements](display_column_example.html). You can specify custom DOM-Elements for these three icons. The DOM-Elements need to accept the *.setAttribute("id","..."))* command. Thus you cannot use a simple *TextNode*, but you have to wrap a *div* or *span* Node around it. Any *class* or *id* setting for the outer element will be overwritten. You can either use an inner *div*/*span* element with your own class or stick the given class for styling.
 
