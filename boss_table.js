@@ -54,7 +54,7 @@ function addTable(tableDescr)
     var icon_node = document.createElement('a');
     icon_node.setAttribute("href","#");
     icon_node.setAttribute("class","boss-table bsst-btn-sort");
-    var span_node=document.createElement('i');
+
     var sorted = 0;
     if(!("sorted" in tableDescr.columns[idx])){
         tableDescr.columns[idx]["sorted"] = sorted;
@@ -62,16 +62,29 @@ function addTable(tableDescr)
     else{
         sorted = tableDescr.columns[idx].sorted;
     }
+    var elem_sort_asc = document.createElement('i');
+    elem_sort_asc.setAttribute("class","fas fa-angle-down");
+    var elem_sort_desc = document.createElement('i');
+    elem_sort_desc.setAttribute("class","fas fa-angle-up");
+    if("icons" in tableDescr){
+        if("sort_asc" in tableDescr.icons){
+            elem_sort_asc = tableDescr.icons.sort_asc.cloneNode(true);
+        }
+        if("sort_desc" in tableDescr.icons){
+            elem_sort_desc = tableDescr.icons.sort_desc.cloneNode(true);
+        }
+    }
+    var elem_sort;
     if(sorted==0){
         icon_node.onclick = OnClickSortASC;
-        span_node.setAttribute("class","fas fa-angle-down");
+        elem_sort = elem_sort_asc;
     }
     else{
         icon_node.onclick = OnClickSortDESC;
-        span_node.setAttribute("class","fas fa-angle-up");
+        elem_sort = elem_sort_desc
     }
-    span_node.setAttribute("id","bsst-btn-sort-"+tableDescr.name + "-" + idx.toString());
-    icon_node.appendChild(span_node);
+    elem_sort.setAttribute("id","bsst-btn-sort-"+tableDescr.name + "-" + idx.toString());
+    icon_node.appendChild(elem_sort);
     th_array[idx_node].appendChild(document.createTextNode(tableDescr.columns[idx].title));
     th_array[idx_node].appendChild(icon_node);
   }
@@ -280,11 +293,16 @@ function addOptionBox(tableDescr) {
     var icon_node = document.createElement('a');
     icon_node.setAttribute("href","#");
     icon_node.setAttribute("class","boss-table bsst-btn-vdots");
-    var span_node=document.createElement('i');
+    var elem_dots = document.createElement('i');
+    elem_dots.setAttribute("class","fas fa-ellipsis-v");
+    if("icons" in tableDescr){
+    if("settings" in tableDescr.icons){
+            elem_dots = tableDescr.icons.settings;
+        }
+    }
     icon_node.onclick = OnClickVDots;
-    span_node.setAttribute("class","fas fa-ellipsis-v");
-    span_node.setAttribute("id","bsst-btn-vdots-"+tableDescr.name);
-    icon_node.appendChild(span_node);
+    elem_dots.setAttribute("id","bsst-btn-vdots-"+tableDescr.name);
+    icon_node.appendChild(elem_dots);
     elem_div_opts.appendChild(icon_node);
 
     elem_div_opts.appendChild(elem_overlay_options);
