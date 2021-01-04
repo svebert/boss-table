@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="boss_table.css">
+<script type="text/javascript" src="boss_table.js"></script>
+</head>
+<body>
+
+<script type="text/javascript">
+dataSet = [
+    {col1: "A", col2: "B", col3: 1},
+    {col1: "C", col2: "D", col3: 0},
+    {col1: "E", col2: "F", col3: 2},
+    {col1: "G", col2: "H", col3: 4},
+    {col1: "I", col2: "J", col3: 5},
+    {col1: "K", col2: "L", col3: 4},
+    {col1: "M", col2: "N", col3: 7},
+    {col1: "O", col2: "P", col3: 4},
+    {col1: "Q", col2: "R", col3: 1},
+    {col1: "S", col2: "T", col3: 2},
+    {col1: "U", col2: "B", col3: 3},
+]
+
+elem_settings = document.createElement("span");
+elem_settings.appendChild(document.createTextNode("OPT"));
+elem_sort_asc = document.createElement("span");
+elem_sort_asc.appendChild(document.createTextNode("++"));
+elem_sort_desc = document.createElement("span");
+elem_sort_desc.appendChild(document.createTextNode("--"));
+
+tableDescr = {
+ data: dataSet,
+ name: "example",
+ pagination: 1,
+ columns: [
+            { title: "awsome column 1", data: "col1"},
+            { title: "awsome column 2", data: "col2"},
+            { title: "awsome column 3", data: "col3"}
+          ],
+
+   page_length: 10,
+   icons:{ settings: elem_settings, sort_asc: elem_sort_asc, sort_desc: elem_sort_desc}
+}
+
+$(document).ready(function () {CreateBossTable(tableDescr);});
+
+</script>
+<table id="example" class="boss-table"></table>
+<div id="example_pagination" class="boss-table pagination"></div>
+</body>
+</html>
